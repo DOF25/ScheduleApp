@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		E723A6A1278DC8C5005A8848 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723A6A0278DC8C5005A8848 /* ScheduleViewController.swift */; };
 		E723A6A3278DC8E3005A8848 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723A6A2278DC8E3005A8848 /* TasksViewController.swift */; };
 		E723A6A5278DC90B005A8848 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723A6A4278DC90B005A8848 /* ContactsViewController.swift */; };
+		E741D24527A1750600F6598A /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741D24427A1750600F6598A /* ScheduleTableViewCell.swift */; };
 		E79B13ED27800C0300FB97A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B13EC27800C0300FB97A9 /* AppDelegate.swift */; };
 		E79B13EF27800C0300FB97A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79B13EE27800C0300FB97A9 /* SceneDelegate.swift */; };
 		E79B13F427800C0300FB97A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E79B13F227800C0300FB97A9 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		E723A6A0278DC8C5005A8848 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		E723A6A2278DC8E3005A8848 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		E723A6A4278DC90B005A8848 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		E741D24427A1750600F6598A /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		E79B13E927800C0300FB97A9 /* ScheduleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79B13EC27800C0300FB97A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E79B13EE27800C0300FB97A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +56,6 @@
 				448E66387F4063E8B75DC49B /* Pods-ScheduleApp.debug.xcconfig */,
 				13B135DD0E8E19A70A4E25A6 /* Pods-ScheduleApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -74,6 +75,22 @@
 				E723A6A4278DC90B005A8848 /* ContactsViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E741D24227A1747600F6598A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E741D24327A1747E00F6598A /* CustomCells */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E741D24327A1747E00F6598A /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				E741D24427A1750600F6598A /* ScheduleTableViewCell.swift */,
+			);
+			name = CustomCells;
 			sourceTree = "<group>";
 		};
 		E79B13E027800C0300FB97A9 = {
@@ -98,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				E723A69F278DC77E005A8848 /* Controllers */,
+				E741D24227A1747600F6598A /* Model */,
 				E79B140027800C1400FB97A9 /* Builder */,
 				E79B13EC27800C0300FB97A9 /* AppDelegate.swift */,
 				E79B13EE27800C0300FB97A9 /* SceneDelegate.swift */,
@@ -232,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E723A6A1278DC8C5005A8848 /* ScheduleViewController.swift in Sources */,
+				E741D24527A1750600F6598A /* ScheduleTableViewCell.swift in Sources */,
 				E723A6A5278DC90B005A8848 /* ContactsViewController.swift in Sources */,
 				E79B13ED27800C0300FB97A9 /* AppDelegate.swift in Sources */,
 				E79B13EF27800C0300FB97A9 /* SceneDelegate.swift in Sources */,

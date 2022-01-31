@@ -32,6 +32,14 @@ final class ScheduleViewController: UIViewController {
 
     private var calendarHeightContraint: NSLayoutConstraint!
 
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+
+    private let cellIdentifier = "ScheduleCell"
+
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +49,7 @@ final class ScheduleViewController: UIViewController {
         configureCalendar()
         configureButton()
         swipeGesture()
+        setupTableView()
 
     }
 
@@ -66,6 +75,15 @@ final class ScheduleViewController: UIViewController {
             changeCalenderHeightButton.centerXAnchor.constraint(equalTo: calendar.centerXAnchor),
             changeCalenderHeightButton.heightAnchor.constraint(equalToConstant: 20),
             changeCalenderHeightButton.widthAnchor.constraint(equalToConstant: 150)
+        ])
+
+        ///tableView
+        view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: changeCalenderHeightButton.bottomAnchor, constant: 10),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
     }
 
@@ -113,8 +131,34 @@ final class ScheduleViewController: UIViewController {
         changeCalenderHeightButton.setTitle("Collapse calendar", for: .normal)
     }
 
+    //MARK: - UITableView
+    private func setupTableView() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.register(ScheduleTableViewCell.self, forCellReuseIdentifier: self.cellIdentifier)
+    }
 }
 
+//MARK: - UITableViewDataSource
+extension ScheduleViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as?
+                ScheduleTableViewCell else { return UITableViewCell() }
+        return cell
+    }
+
+
+}
+
+//MARK: - UITableViewDelegate
+extension ScheduleViewController: UITableViewDelegate {
+
+}
 //MARK: - FSCalendarDataSource
 extension ScheduleViewController: FSCalendarDataSource {
 
